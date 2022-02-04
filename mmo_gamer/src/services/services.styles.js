@@ -30,10 +30,10 @@ export const Pagination = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #cccca6;
         border: none;
         cursor: pointer;
-        color: white;
+        font-size: 20px;
+        color: black;
         font-weight: bold;
     }
 `

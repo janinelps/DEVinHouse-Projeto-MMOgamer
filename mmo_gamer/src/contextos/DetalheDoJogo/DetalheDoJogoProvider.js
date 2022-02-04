@@ -1,20 +1,26 @@
-import { useEffect, useState } from "react"
+import { useEffect, useReducer, useState } from "react"
 import { fetchAllJogos } from "../../services/jogo-services";
 import { useParams } from "react-router-dom";
 import { Formulario } from "../../componentes/Formulario/Formulario";
 import { JogoPropriedadeItem } from "../../componentes/CardJogo";
 import { Container } from "../../services/services.styles";
-import { Reducer } from "../Reducer/Reducer";
+import { reducer } from "../Reducer/Reducer";
 import { Thumbnail, CardTitle } from "../../componentes/CardJogo/Jogo.styles";
 import { Comentario } from "../../componentes/Comentario";
 import { DetalheDoJogoContext } from "./DetalheDoJogoContext"
 
-export const DetalheDoJogoProvider = ({ jogo }) => {
+export const DetalheDoJogoProvider = () => {
+
+    const listaStorageTemp = localStorage.getItem("comentario")
+    let listaStorage = listaStorageTemp ? JSON.parse(listaStorageTemp) : []
 
     const detalhe = { minimum_system_requirements: {} }
 
+
     const [detalheJogo, setDetalheJogo] = useState(detalhe);
     const { id } = useParams();
+
+    const [listaStorageState, dispatch] = useReducer(reducer, listaStorage);
 
     useEffect(() => {
 
@@ -24,11 +30,11 @@ export const DetalheDoJogoProvider = ({ jogo }) => {
 
         })()
     },
-        [])
+        [id])
 
     return (
 
-        <DetalheDoJogoContext.Provider>
+        <DetalheDoJogoContext.Provider value={{ listaStorageState, dispatch }}>
             <Container key={detalheJogo.id}>
                 <Thumbnail >
                     <img src={detalheJogo.thumbnail} alt={detalheJogo.title} />
@@ -49,8 +55,7 @@ export const DetalheDoJogoProvider = ({ jogo }) => {
                     <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.storage} />
                 </div>
                 <Formulario />
-                <Comentario />
-                <Reducer />
+                <Comentario id={id} />
 
             </Container>
         </DetalheDoJogoContext.Provider>

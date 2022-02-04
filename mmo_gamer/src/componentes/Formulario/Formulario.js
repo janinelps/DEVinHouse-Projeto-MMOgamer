@@ -1,20 +1,32 @@
 import { Field, Form, Formik } from "formik"
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { DetalheDoJogoContext } from "../../contextos/DetalheDoJogo/DetalheDoJogoContext";
 import { FormInput, Button, Input, DivButton } from "./Formulario.styled";
 
 export const Formulario = () => {
     const nomeLocalStorage = "comentario";
-
+    const { id } = useParams();
     const listaStorageTemp = localStorage.getItem(nomeLocalStorage)
     let listaStorage = listaStorageTemp ? JSON.parse(listaStorageTemp) : []
+    const detalheDoJogoContext = useContext(DetalheDoJogoContext);
+    const { dispatch } = detalheDoJogoContext;
 
-    const handleSubmit = (values, { setSubmitting }) => {
+    const handleSubmit = (values, { setSubmitting, resetForm }) => {
+        let game = listaStorage.find((g) => g.id === id)
+        if (game) {
+            values = Object.assign({}, values, { id: game.comentarios.length, counter: 0 })
+            game.comentarios.push(values)
+        } else {
+            values = Object.assign({}, values, { id: 0, counter: 0 })
+            game = { id: id, comentarios: [values] }
+            listaStorage.push(game)
+        }
 
-        let teste = Object.assign({}, values, { avaliacao: 0 })
-        console.log(teste)
-
-        listaStorage.push(values)
         localStorage.setItem(nomeLocalStorage, JSON.stringify(listaStorage))
         setSubmitting(false)
+        resetForm()
+        dispatch({ type: 'ATUALIZAR', payload: listaStorage })
     }
 
     return (

@@ -1,5 +1,6 @@
 import { useJogo } from '../../contextos/Jogo';
 import { Busca } from '../busca';
+import { FaCaretRight, FaCaretLeft, FaCaretDown, FaCaretUp } from 'react-icons/fa'
 import {
     Container,
     SectionTitle,
@@ -27,13 +28,15 @@ export const Paginacao = () => {
                 <Busca />
                 <Pagination>
                     <button onClick={handlePagAnterior}>
-                        {`<`}
+                        <FaCaretLeft />
+                        {/* {`<`} */}
                     </button>
                     <span>
                         Página {pagina} de {qtdMaximaPaginas}
                     </span>
                     <button onClick={handleProxPagina}>
-                        {`>`}
+                        <FaCaretRight />
+                        {/* {`>`} */}
                     </button>
                 </Pagination>
             </SectionTitle>
