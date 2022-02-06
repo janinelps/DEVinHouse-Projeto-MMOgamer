@@ -13,18 +13,6 @@ export const Formulario = () => {
     const detalheDoJogoContext = useContext(DetalheDoJogoContext);
     const { dispatch } = detalheDoJogoContext;
 
-    // import { useForm } from "react-hook-form";
-// import * as yup from "yup";
-
-// Type 
-
-// const validationSchema = yup.object.shape({
-//     nome: yup.string().required("Required"),
-//     email: yup.string().email.required("Required")
-//     comentario: yup.string.required()
-// });
-
-
     const handleSubmit = (values, { setSubmitting, resetForm }) => {
         let game = listaStorage.find((g) => g.id === id)
         if (game) {

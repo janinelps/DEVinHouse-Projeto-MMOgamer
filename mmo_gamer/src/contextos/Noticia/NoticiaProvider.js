@@ -9,14 +9,12 @@ export const NoticiaProvider = () => {
     const [busca, setBuscaNoticia] = useState('');
     const [noticiasFiltradas, setNoticiasFiltradas] = useState([]);
     const [pagina, setPagina] = useState(1);
-    //const [noticia, setNoticia] = useState([]);
     const noticias = useRef([])
 
     useEffect(() => {
 
         (async () => {
             const lista = await fetchAllJogos('/latestnews');
-            //setNoticia((l) => l = lista)
             noticias.current = lista
             setNoticiasFiltradas(filtrarListaPorPagina(noticias.current, pagina))
         })();
