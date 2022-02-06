@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { useNoticia } from '../../contextos/Noticia/useNoticia';
 import { CardJogo } from '../CardJogo';
+import { VoltarAoTopo } from '../Jogos/Jogo.styled';
 import { Card } from './Noticias.styled';
 
 export const Noticia = () => {
@@ -19,7 +20,9 @@ export const Noticia = () => {
                     ? 'Nenhum Noticia encontrada.'
                     : noticiasFiltradas.map((noticia) => <CardJogo key={noticia.id} jogo={noticia} />)}
             </Card>
-            <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>
+            <VoltarAoTopo>
+                <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>
+            </VoltarAoTopo>
         </>
     );
 };
