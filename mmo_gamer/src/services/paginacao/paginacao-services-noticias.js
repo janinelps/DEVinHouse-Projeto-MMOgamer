@@ -22,22 +22,20 @@ export const PaginacaoNoticias = () => {
     };
 
     return (
-        <Container >
-            <SectionTitle>
-                <PageTitle>Todas as noticias ({noticiasFiltradas.length})</PageTitle>
-                <BuscaNoticia />
-                <Pagination>
-                    <button onClick={handlePagAnterior}>
-                        <FaCaretLeft />
-                    </button>
-                    <span>
-                        Página {pagina} de {qtdMaximaPaginas}
-                    </span>
-                    <button onClick={handleProxPagina}>
-                        <FaCaretRight />
-                    </button>
-                </Pagination>
-            </SectionTitle>
-        </Container >
+        <SectionTitle>
+            <PageTitle>Todas as noticias ({noticiasFiltradas.length})</PageTitle>
+            <BuscaNoticia />
+            <Pagination>
+                <button onClick={handlePagAnterior}>
+                    <FaCaretLeft />
+                </button>
+                <span>
+                    Página {pagina} de {qtdMaximaPaginas}
+                </span>
+                <button onClick={handleProxPagina}>
+                    <FaCaretRight />
+                </button>
+            </Pagination>
+        </SectionTitle>
     );
 };

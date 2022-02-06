@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { useNoticia } from '../../contextos/Noticia/useNoticia';
-import { CardJogo } from '../CardJogo';
+import { CardNoticia } from '../CardNoticia/CardNoticia';
 import { VoltarAoTopo } from '../Jogos/Jogo.styled';
 import { Card } from './Noticias.styled';
 
@@ -18,7 +18,7 @@ export const Noticia = () => {
 
                 {noticiasFiltradas.length === 0
                     ? 'Nenhum Noticia encontrada.'
-                    : noticiasFiltradas.map((noticia) => <CardJogo key={noticia.id} jogo={noticia} />)}
+                    : noticiasFiltradas.map((noticia) => <CardNoticia key={noticia.id} noticia={noticia} />)}
             </Card>
             <VoltarAoTopo>
                 <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>

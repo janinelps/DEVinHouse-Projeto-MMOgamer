@@ -13,8 +13,6 @@ export const PaginacaoJogos = () => {
     const { pagina, jogosFiltrados, jogo, setPagina } = useJogo();
     const totalItens = jogosFiltrados.length === 40 ? jogo.current.length : jogosFiltrados.length
     const qtdMaximaPaginas = Math.ceil(totalItens / 40);
-    console.log("jogo", jogo.current.length)
-    console.log("filtro", jogosFiltrados.length)
 
     const handlePagAnterior = async () => {
         setPagina((pagAtual) => (pagAtual > 1 ? pagAtual - 1 : 1));
