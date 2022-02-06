@@ -15,7 +15,10 @@ export const CardJogo = ({ jogo }) => {
       <Thumbnail >
         <img src={jogo.thumbnail} alt={jogo.title} />
       </Thumbnail>
-      <Title >{jogo.title}</Title>
+      <Title>
+        <h4>{jogo.title}</h4>
+        <p>PC</p>
+      </Title>
       <Description >
         <JogoPropriedadeItem descricaoJogo={jogo.short_description} />
         <Link to={`detalhe/${jogo.id}`} >

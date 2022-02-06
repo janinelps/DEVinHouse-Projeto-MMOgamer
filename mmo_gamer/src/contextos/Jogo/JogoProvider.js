@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Jogos } from '../../componentes/Jogos';
 import { filtrarListaPorPagina, filtrarListaPorTermoDeBusca } from '../../helper/filtraJogo';
 import { fetchAllJogos } from '../../services/jogo-services';
-import { Paginacao } from '../../services/paginacao/paginacao-services';
+import { PaginacaoJogos } from '../../services/paginacao/paginacao-services-jogos';
 import { JogoContext } from './JogoContext';
 
 export const JogoProvider = () => {
@@ -32,7 +32,7 @@ export const JogoProvider = () => {
 
     return (
         <JogoContext.Provider value={{ setBusca, jogo, jogosFiltrados, pagina, setPagina }}>
-            <Paginacao />
+            <PaginacaoJogos />
             <Jogos />
         </JogoContext.Provider>
     );

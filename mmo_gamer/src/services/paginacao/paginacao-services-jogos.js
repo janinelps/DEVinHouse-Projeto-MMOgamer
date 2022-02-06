@@ -1,6 +1,6 @@
 import { useJogo } from '../../contextos/Jogo';
-import { Busca } from '../busca';
-import { FaCaretRight, FaCaretLeft, FaCaretDown, FaCaretUp } from 'react-icons/fa'
+import { BuscaJogo } from '../busca';
+import { FaCaretRight, FaCaretLeft } from 'react-icons/fa'
 import {
     Container,
     SectionTitle,
@@ -9,9 +9,12 @@ import {
 
 } from '../services.styles';
 
-export const Paginacao = () => {
+export const PaginacaoJogos = () => {
     const { pagina, jogosFiltrados, jogo, setPagina } = useJogo();
-    const qtdMaximaPaginas = Math.ceil(jogo.current.length / 10);
+    const totalItens = jogosFiltrados.length === 40 ? jogo.current.length : jogosFiltrados.length
+    const qtdMaximaPaginas = Math.ceil(totalItens / 40);
+    console.log("jogo", jogo.current.length)
+    console.log("filtro", jogosFiltrados.length)
 
     const handlePagAnterior = async () => {
         setPagina((pagAtual) => (pagAtual > 1 ? pagAtual - 1 : 1));
@@ -25,18 +28,16 @@ export const Paginacao = () => {
         <Container >
             <SectionTitle>
                 <PageTitle>Todos os jogos ({jogosFiltrados.length})</PageTitle>
-                <Busca />
+                <BuscaJogo />
                 <Pagination>
                     <button onClick={handlePagAnterior}>
                         <FaCaretLeft />
-                        {/* {`<`} */}
                     </button>
                     <span>
                         Página {pagina} de {qtdMaximaPaginas}
                     </span>
                     <button onClick={handleProxPagina}>
                         <FaCaretRight />
-                        {/* {`>`} */}
                     </button>
                 </Pagination>
             </SectionTitle>

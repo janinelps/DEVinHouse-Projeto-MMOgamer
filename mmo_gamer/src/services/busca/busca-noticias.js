@@ -1,20 +1,20 @@
 // import { Link } from "react-router-dom";
-import { useJogo } from "../../contextos/Jogo/useJogo";
+import { useNoticia } from "../../contextos/Noticia/useNoticia";
 import { BuscaContainer } from '../services.styles'
 
 
-export const Busca = () => {
-    const { setBusca } = useJogo()
+export const BuscaNoticia = () => {
+    const { setBuscaNoticia } = useNoticia()
 
     return (
         <>
             <BuscaContainer>
                 <input
                     onChange={(evento) => {
-                        setBusca(evento.target.value)
+                        setBuscaNoticia(evento.target.value)
                     }}
                     type='text'
-                    placeholder='Digite o nome do jogo'
+                    placeholder='Digite o nome da noticia'
                 ></input>
             </BuscaContainer>
         </>

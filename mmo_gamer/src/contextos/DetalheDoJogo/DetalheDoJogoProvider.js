@@ -5,7 +5,7 @@ import { Formulario } from "../../componentes/Formulario/Formulario";
 import { JogoPropriedadeItem } from "../../componentes/CardJogo";
 import { Container } from "../../services/services.styles";
 import { reducer } from "../Reducer/Reducer";
-import { Thumbnail, CardTitle } from "../../componentes/CardJogo/Jogo.styles";
+import { Thumbnail, CardTitle, Genero, Sistema } from "./DetalheDoJogo.styles";
 import { Comentario } from "../../componentes/Comentario";
 import { DetalheDoJogoContext } from "./DetalheDoJogoContext"
 
@@ -41,19 +41,20 @@ export const DetalheDoJogoProvider = () => {
                 </Thumbnail>
                 <CardTitle>{detalheJogo.title}</CardTitle>
                 <JogoPropriedadeItem descricaoJogo={detalheJogo.short_description} />
-                <div>
-                    <h3>Genero</h3>
+                <Genero>
+                    <h3>Genero: </h3>
                     <JogoPropriedadeItem descricaoJogo={detalheJogo.genre} />
-                    <h3>Plataforma</h3>
+                    <h3>Plataforma: </h3>
                     <JogoPropriedadeItem descricaoJogo={detalheJogo.platform} />
-                </div>
-                <div>
+                </Genero>
+                <Sistema>
+                    <h3>Requisito de sistema</h3>
                     <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.os} />
                     <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.processor} />
                     <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.memory} />
                     <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.graphics} />
                     <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.storage} />
-                </div>
+                </Sistema>
                 <Formulario />
                 <Comentario id={id} />
 

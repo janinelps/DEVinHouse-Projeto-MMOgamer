@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { useNoticia } from '../../contextos/Noticia/useNoticia';
 import { CardJogo } from '../CardJogo';
+import { VoltarAoTopo } from '../Jogos/Jogo.styled';
 import { Card } from './Noticias.styled';
 
 export const Noticia = () => {
     const elementoTopo = useRef();
-    const { noticiaFiltrados } = useNoticia();
+    const { noticiasFiltradas } = useNoticia();
 
     const handleVoltarAoTopo = () => {
         elementoTopo.current.scrollIntoView({ behavior: 'smooth' });
@@ -15,11 +16,13 @@ export const Noticia = () => {
         <>
             <Card ref={elementoTopo}>
 
-                {noticiaFiltrados.length === 0
+                {noticiasFiltradas.length === 0
                     ? 'Nenhum Noticia encontrada.'
-                    : noticiaFiltrados.map((noticia) => <CardJogo key={noticia.id} jogo={noticia} />)}
+                    : noticiasFiltradas.map((noticia) => <CardJogo key={noticia.id} jogo={noticia} />)}
             </Card>
-            <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>
+            <VoltarAoTopo>
+                <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>
+            </VoltarAoTopo>
         </>
     );
 };

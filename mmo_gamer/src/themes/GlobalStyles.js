@@ -17,10 +17,13 @@ body{
 `
 
 export const Head = styled.div`
+    height: 200px;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    margin: 20px;
+    margin: 40px;
+    background-image: url('gamer.png');
+    background-repeat: no-repeat;
 
     a{
         text-transform: uppercase;

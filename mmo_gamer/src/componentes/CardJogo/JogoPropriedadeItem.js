@@ -6,9 +6,9 @@ export const JogoPropriedadeItem = ({ descricaoJogo }) => {
 
     return (
         <CardDescItem>
-            <span>
+            <div>
                 {descricaoJogo}
-            </span>
+            </div>
         </CardDescItem>
     );
 };
