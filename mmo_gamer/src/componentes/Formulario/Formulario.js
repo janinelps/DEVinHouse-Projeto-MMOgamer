@@ -2,7 +2,8 @@ import { Field, Form, Formik } from "formik"
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DetalheDoJogoContext } from "../../contextos/DetalheDoJogo/DetalheDoJogoContext";
-import { FormInput, Button, Input, DivButton } from "./Formulario.styled";
+import { FormInput, Button, Input, DivButton, Erro } from "./Formulario.styled";
+import * as yup from "yup";
 
 export const Formulario = () => {
     const nomeLocalStorage = "comentario";
@@ -31,17 +32,27 @@ export const Formulario = () => {
 
     return (
         <>
-            <Formik initialValues={{ nome: '', email: '', comentario: '' }} onSubmit={handleSubmit}>
+            <Formik initialValues={{ nome: '', email: '', comentario: '' }}
+                validationSchema={yup.object({
+                    nome: yup.string().required("Nome deve ser informado."),
+                    email: yup.string().email("Email informado não é váido").required("Email deve ser informado."),
+                    comentario: yup.string().required("Comentário deve ser informado."),
+                })}
+                onSubmit={handleSubmit}>
 
-                {({ isSubmitting, resetForm }) => (
+                {({ errors, touched, isSubmitting, resetForm }) => (
                     < Form >
+                        {errors.nome && touched.nome ? (<Erro>{errors.nome}</Erro>) : null}
+                        {errors.email && touched.email ? (<Erro>{errors.email}</Erro>) : null}
+                        {errors.comentario && touched.comentario ? (<Erro>{errors.comentario}</Erro>) : null}
+
                         <FormInput>
                             <h3>Comentários</h3>
                             <Input>
-                                <Field name='nome' type='text' required placeholder='Nome Completo' />
-                                <Field name='email' type='email' required placeholder='E-mail' />
+                                <Field name='nome' type='text' placeholder='Nome Completo' />
+                                <Field name='email' type='email' placeholder='E-mail' />
                             </Input>
-                            <Field component="textarea" rows="10" required name='comentario' placeholder='Deixe seu comentario' />
+                            <Field component="textarea" rows="10" name='comentario' placeholder='Deixe seu comentario' />
                             <DivButton>
                                 <Button type="submit" disabled={isSubmitting}>ENVIAR</Button>
                                 <Button type="button" disabled={isSubmitting} onClick={resetForm} >LIMPAR</Button>

@@ -1,5 +1,9 @@
+
 import styled from "styled-components";
 
+export const Erro = styled.div`
+    color: red;
+`
 
 export const FormInput = styled.div`
 
