@@ -6,6 +6,7 @@ import {
   Description,
   Button,
 } from './Jogo.styles';
+import { JogoPropriedadeItem } from './JogoPropriedadeItem';
 
 export const CardJogo = ({ jogo }) => {
   return (

@@ -30,6 +30,7 @@ export const CardTitle = styled.div`
   }
 `
 
+<<<<<<< HEAD
 export const CardDescItem = styled.div`
   margin: 1rem 0;
 
@@ -43,6 +44,8 @@ export const CardDescItem = styled.div`
     overflow: hidden;
   }
 `
+=======
+>>>>>>> 14efe4134de899973fc57e6e9382ec43d42315fe
 export const Button = styled.button`
   margin: 10px;
   width: 200px;
