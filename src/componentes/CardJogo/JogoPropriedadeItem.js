@@ -1,6 +1,4 @@
-import {
-    CardDescItem,
-} from './Jogo.styles'
+import { CardDescItem } from './Jogo.styles'
 
 export const JogoPropriedadeItem = ({ descricaoJogo }) => {
 

@@ -30,19 +30,6 @@ export const CardTitle = styled.div`
   }
 `
 
-export const CardDescItem = styled.div`
-  margin: 1rem 0;
-
-  div{
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-    color: #333;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-`
 export const Button = styled.button`
   margin: 10px;
   width: 200px;
