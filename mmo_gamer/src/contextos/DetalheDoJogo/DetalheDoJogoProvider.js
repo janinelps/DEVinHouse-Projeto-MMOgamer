@@ -5,17 +5,17 @@ import { Formulario } from "../../componentes/Formulario/Formulario";
 import { JogoPropriedadeItem } from "../../componentes/CardJogo";
 import { Container } from "../../services/services.styles";
 import { reducer } from "../Reducer/Reducer";
-import { Thumbnail, CardTitle, Genero, Sistema } from "./DetalheDoJogo.styles";
+import { CardTitle, Genero, Sistema } from "./DetalheDoJogo.styles";
 import { Comentario } from "../../componentes/Comentario";
 import { DetalheDoJogoContext } from "./DetalheDoJogoContext"
+import { Carrossel } from "../../componentes/Carrossel/Carrossel";
 
 export const DetalheDoJogoProvider = () => {
 
     const listaStorageTemp = localStorage.getItem("comentario")
     let listaStorage = listaStorageTemp ? JSON.parse(listaStorageTemp) : []
 
-    const detalhe = { minimum_system_requirements: {} }
-
+    const detalhe = { minimum_system_requirements: {}, screenshots: [] }
 
     const [detalheJogo, setDetalheJogo] = useState(detalhe);
     const { id } = useParams();
@@ -36,10 +36,8 @@ export const DetalheDoJogoProvider = () => {
 
         <DetalheDoJogoContext.Provider value={{ listaStorageState, dispatch }}>
             <Container key={detalheJogo.id}>
-                <Thumbnail >
-                    <img src={detalheJogo.thumbnail} alt={detalheJogo.title} />
-                </Thumbnail>
                 <CardTitle>{detalheJogo.title}</CardTitle>
+                <Carrossel screenshots={detalheJogo.screenshots} title={detalheJogo.title} />
                 <JogoPropriedadeItem descricaoJogo={detalheJogo.short_description} />
                 <Genero>
                     <h3>Genero: </h3>

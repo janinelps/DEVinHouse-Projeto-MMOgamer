@@ -1,15 +1,7 @@
 import styled from "styled-components"
 
-export const Thumbnail = styled.div`
-  width: 100%;
-  overflow: hidden;
-
-  img{
-    width: 100%;
-  }
-`
 export const CardTitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #436147;
   text-align: center;
 `
