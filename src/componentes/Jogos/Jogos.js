@@ -1,12 +1,11 @@
 import React, { useRef } from 'react';
-import { useNoticia } from '../../contextos/Noticia/useNoticia';
+import { useJogo } from '../../contextos/Jogo/useJogo';
 import { CardJogo } from '../CardJogo';
-import { VoltarAoTopo } from '../Jogos/Jogo.styled';
-import { Card } from './Noticias.styled';
+import { Card, VoltarAoTopo } from './Jogo.styled';
 
-export const Noticia = () => {
+export const Jogos = () => {
     const elementoTopo = useRef();
-    const { noticiasFiltradas } = useNoticia();
+    const { jogosFiltrados } = useJogo();
 
     const handleVoltarAoTopo = () => {
         elementoTopo.current.scrollIntoView({ behavior: 'smooth' });
@@ -15,10 +14,9 @@ export const Noticia = () => {
     return (
         <>
             <Card ref={elementoTopo}>
-
-                {noticiasFiltradas.length === 0
-                    ? 'Nenhum Noticia encontrada.'
-                    : noticiasFiltradas.map((noticia) => <CardJogo key={noticia.id} jogo={noticia} />)}
+                {jogosFiltrados.length === 0
+                    ? 'Nenhum jogo encontrado'
+                    : jogosFiltrados.map((jogo) => <CardJogo key={jogo.id} jogo={jogo} />)}
             </Card>
             <VoltarAoTopo>
                 <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>
