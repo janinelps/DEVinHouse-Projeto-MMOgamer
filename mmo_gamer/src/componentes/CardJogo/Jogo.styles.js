@@ -9,12 +9,27 @@ export const Card = styled.div`
 }
 `
 
-export const Title = styled.h4`
+export const Title = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+  h4{
   color: #626262;
   font-size: 20px;
   text-align: left;
   font-weight: 700;
   margin-right: 20px;
+  }
+
+  p{
+    padding: auto;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    background: #efefef;
+    text-align: center;
+    width: 20%;
+}
 `
 
 export const Thumbnail = styled.div`
@@ -26,7 +41,7 @@ export const Thumbnail = styled.div`
   }
 `
 
-export const CardTitle = styled.h2`
+export const CardTitle = styled.div`
   font-size: 1.5rem;
   color: #436147;
   text-align: center;
@@ -38,11 +53,14 @@ export const Description = styled.div`
 export const CardDescItem = styled.div`
   margin: 1rem 0;
 
-  span{
+  div{
     font-size: 1rem;
     margin-bottom: 0.25rem;
     color: #333;
-    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 `
 export const Button = styled.button`

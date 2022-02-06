@@ -1,5 +1,7 @@
 import { useContext } from "react"
 import { DetalheDoJogoContext } from "../../contextos/DetalheDoJogo/DetalheDoJogoContext"
+import { FaCaretDown, FaCaretUp } from 'react-icons/fa'
+import { Container, ComentNome, Pontos } from "./Comentario.styles"
 
 export const Comentario = ({ id }) => {
 
@@ -10,19 +12,20 @@ export const Comentario = ({ id }) => {
         <>
             {listaStorageState.find(game => game.id === id) && (
                 listaStorageState.find(game => game.id === id).comentarios.map((comentario) =>
-                    <div key={comentario.id}>
-                        <div>{comentario.nome}</div>
-                        <div>{comentario.comentario}</div>
-                        <div style={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
-                            <button style={{ padding: '10px' }} onClick={() => dispatch({ type: 'DECREMENTA', payload: { comentarioId: comentario.id, idGame: id } })}>
-                                -
-                            </button>
-                            <p style={{ padding: '10px' }}>{comentario.counter}</p>
-                            <button style={{ padding: '10px' }} onClick={() => dispatch({ type: 'INCREMENTA', payload: { comentarioId: comentario.id, idGame: id } })}>
-                                +
-                            </button>
+                    <Container key={comentario.id}>
+                        <ComentNome>{comentario.nome}</ComentNome>
+                        <div>{comentario.comentario}
+                            <Pontos >
+                                <button onClick={() => dispatch({ type: 'DECREMENTA', payload: { comentarioId: comentario.id, idGame: id } })}>
+                                    <FaCaretDown />
+                                </button>
+                                <p>{comentario.counter}</p>
+                                <button style={{ padding: '10px' }} onClick={() => dispatch({ type: 'INCREMENTA', payload: { comentarioId: comentario.id, idGame: id } })}>
+                                    <FaCaretUp />
+                                </button>
+                            </Pontos>
                         </div>
-                    </div>
+                    </Container>
                 )
             )}
         </>
