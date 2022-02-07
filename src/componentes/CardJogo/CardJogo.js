@@ -20,7 +20,7 @@ export const CardJogo = ({ jogo }) => {
         <p>PC</p>
       </Title>
       <Description >
-        <JogoPropriedadeItem descricaoJogo={jogo.short_description} />
+        {jogo.short_description}
         <Link to={`detalhe/${jogo.id}`} >
           <Button type='button'>Mais informações...</Button>
         </Link>
