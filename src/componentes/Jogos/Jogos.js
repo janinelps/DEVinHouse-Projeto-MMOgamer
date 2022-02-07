@@ -19,6 +19,7 @@ export const Jogos = () => {
                     : jogosFiltrados.map((jogo) => <CardJogo key={jogo.id} jogo={jogo} />)}
             </Card>
             <VoltarAoTopo>
+                <p>Feito por <a href='https://github.com/janinelps' target='_blank' rel="noreferrer" > Janine Santos </a></p>
                 <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>
             </VoltarAoTopo>
         </>

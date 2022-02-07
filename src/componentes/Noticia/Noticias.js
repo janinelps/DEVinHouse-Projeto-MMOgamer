@@ -21,6 +21,7 @@ export const Noticia = () => {
                     : noticiasFiltradas.map((noticia) => <CardNoticia key={noticia.id} noticia={noticia} />)}
             </Card>
             <VoltarAoTopo>
+                <p>Feito por <a href='https://github.com/janinelps' target='_blank' rel="noreferrer" >Janine Santos</a></p>
                 <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>
             </VoltarAoTopo>
         </>

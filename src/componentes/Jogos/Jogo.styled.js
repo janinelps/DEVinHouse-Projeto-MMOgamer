@@ -9,10 +9,21 @@ export const VoltarAoTopo = styled.div`
     height: 50px;
     display: flex;
     justify-content: center;
+
+    p{
+    display: flex;
+    align-items: center;  
+    
+        a{
+            text-decoration:none;
+            padding: 20px;
+        }
+    }
     
     button{
-        cursor: pointer
-        padding: 20px;
+        cursor: pointer;
+        padding: 0 20px;
+        margin: 5px 20px;
         border-radius: 10px;
   
         &:hover {
