@@ -3,7 +3,7 @@
 ## 1. Introdução
 Você está prestes a entrar para o time de Desenvolvedores da Massive DEVinHouse Online Corp. Para concretizar a sua contratação, você deverá resolver um desafio utilizando React. O time de recrutamento necessita que você crie uma aplicação, chamada DEVinMMO.
 
-🔗 Teste o funcionamento da aplicação pelo link: ....
+🔗 Teste o funcionamento da aplicação: <a href="https://laughing-franklin-ea8add.netlify.app/" target="_blank">Clique aqui.</a>
 
 ## 2. Requisitos da Aplicação
 A aplicação que deverá ser realizada individualmente, deve contemplar os seguintes requisitos:
