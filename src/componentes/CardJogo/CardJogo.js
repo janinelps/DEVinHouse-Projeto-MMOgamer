@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { JogoPropriedadeItem } from './JogoPropriedadeItem';
 import {
   Title,
   Card,
@@ -6,7 +7,6 @@ import {
   Description,
   Button,
 } from './Jogo.styles';
-import { JogoPropriedadeItem } from './JogoPropriedadeItem';
 
 export const CardJogo = ({ jogo }) => {
   return (
@@ -20,7 +20,7 @@ export const CardJogo = ({ jogo }) => {
         <p>PC</p>
       </Title>
       <Description >
-        {jogo.short_description}
+        <JogoPropriedadeItem descricaoJogo={jogo.short_description} />
         <Link to={`detalhe/${jogo.id}`} >
           <Button type='button'>Mais informações...</Button>
         </Link>
