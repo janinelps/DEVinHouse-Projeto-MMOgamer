@@ -19,10 +19,8 @@ export const Sistema = styled.div`
     background: white;
     padding: 10px;
 
-    h5{
+    h4{
         display: flex;
-        align-items: baseline;
-        
+        align-items: baseline;       
     }
-    
 ` 

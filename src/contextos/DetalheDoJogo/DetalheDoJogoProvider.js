@@ -47,11 +47,11 @@ export const DetalheDoJogoProvider = () => {
                 </Genero>
                 <Sistema>
                     <h3>Requisito de sistema</h3>
-                    <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.os} />
-                    <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.processor} />
-                    <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.memory} />
-                    <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.graphics} />
-                    <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.storage} />
+                    <h4>Sistema Operacional: <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.os} /></h4>
+                    <h4>Processador: <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.processor} /></h4>
+                    <h4>Memoria: <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.memory} /></h4>
+                    <h4>Gráfico: <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.graphics} /></h4>
+                    <h4>Espaço em disco: <JogoPropriedadeItem descricaoJogo={detalheJogo.minimum_system_requirements.storage} /></h4>
                 </Sistema>
                 <Formulario />
                 <Comentario id={id} />
