@@ -3,6 +3,7 @@ import { Router } from './router/Router';
 import { GlobalStyle, Head } from './themes/GlobalStyles';
 import { ThemesProvider } from './themes'
 import logo from './MMOgamer.png'
+import { Footer } from './componentes/Footer/Footer';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <GlobalStyle />
       <ThemesProvider>
         <BrowserRouter>
+          <span id="VoltaAoTopo"></span>
           <Head>
             <Link to='noticia'>Noticia</Link>
             <Link to='/'>Jogos</Link>
@@ -18,6 +20,7 @@ function App() {
           </Head>
           <Router />
         </BrowserRouter>
+        <Footer />
       </ThemesProvider>
     </>
   );
