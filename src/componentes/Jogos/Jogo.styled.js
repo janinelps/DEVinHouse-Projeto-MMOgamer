@@ -4,7 +4,7 @@ export const Card = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 `
-export const VoltarAoTopo = styled.div`
+export const Footer = styled.footer`
     background: gray;
     height: 50px;
     display: flex;
@@ -21,6 +21,11 @@ export const VoltarAoTopo = styled.div`
     }
     
     button{
+        font-size: 40px;
+        position: fixed;
+        top: 50%;
+        transform: translateY(250px);
+        right: 5%;
         cursor: pointer;
         padding: 0 20px;
         margin: 5px 20px;

@@ -7,6 +7,11 @@ export const Card = styled.div`
   display: flex;
   justify-content: space-around;
   margin: 10px;
+
+  &:hover{
+    margin: 12px;
+    background: gray;
+  }
 }
 `
 

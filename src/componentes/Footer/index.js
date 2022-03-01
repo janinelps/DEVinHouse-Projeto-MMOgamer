@@ -1,0 +1,1 @@
+export { Footer } from "../Jogos/Jogo.styled";

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Jogos } from '../../componentes/Jogos';
 import { filtrarListaPorPagina, filtrarListaPorTermoDeBusca } from '../../helper/filtraJogo';
 import { fetchAllJogos } from '../../services/jogo-services';
-import { PaginacaoJogos } from '../../services/paginacao/paginacao-services-jogos';
+import { PaginacaoJogos } from '../../componentes/Paginacao/paginacao-jogos';
 import { JogoContext } from './JogoContext';
 
 export const JogoProvider = () => {

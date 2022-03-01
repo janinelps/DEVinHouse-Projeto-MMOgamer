@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
+import { FaCaretUp } from 'react-icons/fa';
 import { useNoticia } from '../../contextos/Noticia/useNoticia';
 import { CardNoticia } from '../CardNoticia/CardNoticia';
-import { VoltarAoTopo } from '../Jogos/Jogo.styled';
+import { Footer } from '../Jogos/Jogo.styled';
 import { Card } from './Noticias.styled';
 
 export const Noticia = () => {
@@ -20,10 +21,10 @@ export const Noticia = () => {
                     ? 'Nenhum Noticia encontrada.'
                     : noticiasFiltradas.map((noticia) => <CardNoticia key={noticia.id} noticia={noticia} />)}
             </Card>
-            <VoltarAoTopo>
+            <Footer>
                 <p>Feito por <a href='https://github.com/janinelps' target='_blank' rel="noreferrer" >Janine Santos</a></p>
-                <button onClick={handleVoltarAoTopo}>Voltar para o topo</button>
-            </VoltarAoTopo>
+                <button onClick={handleVoltarAoTopo}><FaCaretUp /></button>
+            </Footer>
         </>
     );
 };

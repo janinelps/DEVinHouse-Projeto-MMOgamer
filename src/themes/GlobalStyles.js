@@ -7,23 +7,26 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
 }
 html{
-    font-sizing: 16px;
+    font-size: 16px;
     color: #333;
     font-family: Montserrat, sans-serif;
 }
 body{
+    padding-top: 90px;
     background-color: #efefef;
 }
 `
 
 export const Head = styled.div`
-    height: 200px;
     display: flex;
+    position: fixed;
+    background: #efefef;
+    width: 100%;
     align-items: center;
+    justify-content: space-around;
     flex-direction: row-reverse;
-    margin: 40px;
-    background-image: url('gamer.png');
-    background-repeat: no-repeat;
+    padding: 10px;
+    top: 0;
 
     a{
         text-transform: uppercase;

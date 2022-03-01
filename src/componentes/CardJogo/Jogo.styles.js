@@ -5,6 +5,12 @@ export const Card = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1rem;
   background-color: white;
+
+  &:hover {
+    margin: 1.2rem;
+    background: gray;
+    
+  }
   
 }
 `

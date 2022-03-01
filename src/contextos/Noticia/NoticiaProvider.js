@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Noticia } from '../../componentes/Noticia/Noticias';
 import { filtrarListaPorPagina, filtrarListaPorTermoDeBusca } from '../../helper/filtraJogo';
 import { fetchAllJogos } from '../../services/jogo-services';
-import { PaginacaoNoticias } from '../../services/paginacao/paginacao-services-noticias';
+import { PaginacaoNoticias } from '../../componentes/Paginacao/paginacao-noticias';
 import { NoticiaContext } from './NoticiaContext';
 
 export const NoticiaProvider = () => {
