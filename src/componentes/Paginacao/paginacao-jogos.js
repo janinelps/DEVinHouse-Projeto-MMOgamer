@@ -1,5 +1,5 @@
 import { useJogo } from '../../contextos/Jogo';
-import { BuscaJogo } from '../../componentes/Busca/busca-jogos';
+import { Busca } from '../../componentes/Busca/busca-jogos';
 import { FaCaretRight, FaCaretLeft } from 'react-icons/fa'
 import {
     Container,
@@ -26,7 +26,7 @@ export const PaginacaoJogos = () => {
         <Container >
             <SectionTitle>
                 <PageTitle>Todos os jogos ({jogosFiltrados.length})</PageTitle>
-                <BuscaJogo />
+                <Busca />
                 <Pagination>
                     <button onClick={handlePagAnterior}>
                         <FaCaretLeft />

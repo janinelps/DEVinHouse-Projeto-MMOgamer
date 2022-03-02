@@ -3,7 +3,7 @@ import { useJogo } from "../../contextos/Jogo/useJogo";
 import { BuscaContainer } from '../../services/services.styles'
 
 
-export const BuscaJogo = () => {
+export const Busca = () => {
     const { setBusca } = useJogo()
 
     return (
