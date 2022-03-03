@@ -14,17 +14,21 @@ export const Pontos = styled.div`
     align-items: center;
     justify-content: end;
 
-    button{
-        font-size: 40px;
-        border: none;
-        background: white;
-        color: gray;
-    }
     p{
             padding: 10px;
             font-size: 24px;
             padding: 10px;
         }
-    
+`
+export const ButtonUp = styled.button`
+    font-size: 40px;
+    border: none;
+    background: white;
+    color: green;
+}
+`
+
+export const ButtonDown = styled(ButtonUp)`
+    color: red;
 `
 
