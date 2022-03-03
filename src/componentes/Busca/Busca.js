@@ -1,20 +1,19 @@
 // import { Link } from "react-router-dom";
-import { useNoticia } from "../../contextos/Noticia/useNoticia";
 import { BuscaContainer } from '../../services/services.styles'
 
 
-export const BuscaNoticia = () => {
-    const { setBuscaNoticia } = useNoticia()
+export const Busca = ({ contexto }) => {
+    const { setBusca } = contexto()
 
     return (
         <>
             <BuscaContainer>
                 <input
                     onChange={(evento) => {
-                        setBuscaNoticia(evento.target.value)
+                        setBusca(evento.target.value)
                     }}
                     type='text'
-                    placeholder='Digite o nome da noticia'
+                    placeholder='Digite o nome '
                 ></input>
             </BuscaContainer>
         </>

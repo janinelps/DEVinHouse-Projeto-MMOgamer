@@ -1,5 +1,4 @@
-import { useJogo } from '../../contextos/Jogo';
-import { Busca } from '../../componentes/Busca/busca-jogos';
+import { Busca } from '../Busca';
 import { FaCaretRight, FaCaretLeft } from 'react-icons/fa'
 import {
     Container,
@@ -9,9 +8,9 @@ import {
 
 } from '../../services/services.styles';
 
-export const PaginacaoJogos = () => {
-    const { pagina, jogosFiltrados, jogo, setPagina } = useJogo();
-    const totalItens = jogosFiltrados.length === 40 ? jogo.current.length : jogosFiltrados.length
+export const Paginacao = ({ contexto }) => {
+    const { pagina, filtrados, filtro, setPagina, titulo } = contexto();
+    const totalItens = filtrados.length === 40 ? filtro.current.length : filtrados.length
     const qtdMaximaPaginas = Math.ceil(totalItens / 40);
 
     const handlePagAnterior = async () => {
@@ -25,8 +24,8 @@ export const PaginacaoJogos = () => {
     return (
         <Container >
             <SectionTitle>
-                <PageTitle>Todos os jogos ({jogosFiltrados.length})</PageTitle>
-                <Busca />
+                <PageTitle>({titulo}) ({filtrados.length})</PageTitle>
+                <Busca contexto={contexto} />
                 <Pagination>
                     <button onClick={handlePagAnterior}>
                         <FaCaretLeft />

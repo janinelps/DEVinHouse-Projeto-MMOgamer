@@ -4,14 +4,14 @@ import { CardJogo } from '../CardJogo';
 import { Card } from './Jogo.styled';
 
 export const Jogos = () => {
-    const { jogosFiltrados } = useJogo();
+    const { filtrados } = useJogo();
 
     return (
         <>
             <Card>
-                {jogosFiltrados.length === 0
-                    ? 'Nenhum jogo encontrado'
-                    : jogosFiltrados.map((jogo) => <CardJogo key={jogo.id} jogo={jogo} />)}
+                {filtrados.length === 0
+                    ? 'Nenhum Jogo encontrado'
+                    : filtrados.map((jogo) => <CardJogo key={jogo.id} jogo={jogo} />)}
             </Card>
         </>
     );

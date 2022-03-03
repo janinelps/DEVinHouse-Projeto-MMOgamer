@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Jogos } from '../../componentes/Jogos';
-import { filtrarListaPorPagina, filtrarListaPorTermoDeBusca } from '../../helper/filtraJogo';
+import { filtrarListaPorPagina, filtrarListaPorTermoDeBusca } from '../../helper/filtrar';
 import { fetchAllJogos } from '../../services/jogo-services';
-import { PaginacaoJogos } from '../../componentes/Paginacao/paginacao-jogos';
+import { Paginacao } from '../../componentes/Paginacao';
 import { JogoContext } from './JogoContext';
+import { useJogo } from './useJogo';
 
 export const JogoProvider = () => {
     const [busca, setBusca] = useState('');
@@ -23,7 +24,7 @@ export const JogoProvider = () => {
         , []);
 
     useEffect(() => {
-        setJogosFiltrados(filtrarListaPorTermoDeBusca(jogo.current, busca));
+        setJogosFiltrados(filtrarListaPorTermoDeBusca( jogo.current, busca));
     }, [busca]);
 
     useEffect(() => {
@@ -31,8 +32,8 @@ export const JogoProvider = () => {
     }, [pagina]);
 
     return (
-        <JogoContext.Provider value={{ setBusca, jogo, jogosFiltrados, pagina, setPagina }}>
-            <PaginacaoJogos />
+        <JogoContext.Provider value={{ setBusca, filtro: jogo, filtrados: jogosFiltrados, pagina, setPagina, titulo: "Jogos" }}>
+            <Paginacao contexto={useJogo} />
             <Jogos />
         </JogoContext.Provider>
     );
