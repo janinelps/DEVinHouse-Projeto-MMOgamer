@@ -4,14 +4,14 @@ import { CardNoticia } from '../CardNoticia/CardNoticia';
 import { Card } from './Noticias.styled';
 
 export const Noticia = () => {
-    const { noticiasFiltradas } = useNoticia();
+    const { filtrados } = useNoticia();
 
     return (
         <>
             <Card>
-                {noticiasFiltradas.length === 0
+                {filtrados.length === 0
                     ? 'Nenhum Noticia encontrada.'
-                    : noticiasFiltradas.map((noticia) => <CardNoticia key={noticia.id} noticia={noticia} />)}
+                    : filtrados.map((noticia) => <CardNoticia key={noticia.id} noticia={noticia} />)}
             </Card>
         </>
     );

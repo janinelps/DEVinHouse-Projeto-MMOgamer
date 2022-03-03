@@ -1,2 +1,1 @@
-export * from './busca-jogos'
-export * from './busca-noticias'
+export * from './Busca'
