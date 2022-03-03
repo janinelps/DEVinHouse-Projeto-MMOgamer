@@ -9,7 +9,7 @@ export const Footer = () => {
     };
     return (
         <FooterStyled>
-            < p > Feito por <a href='https://github.com/janinelps' target='_blank' rel="noreferrer" >Janine Santos</a></p >
+            < p > Feito por <a href='https://github.com/janinelps' target='_blank' rel="noreferrer" ><strong>Janine Santos</strong></a> DEVinHouse - 2022</p >
             <button onClick={handleVoltarAoTopo}><FaCaretUp /></button>
         </FooterStyled>
     )

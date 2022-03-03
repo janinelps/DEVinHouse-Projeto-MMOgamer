@@ -12,7 +12,8 @@ export const FooterStyled = styled.footer`
     
     p{
     display: flex;
-    align-items: center;  
+    align-items: center; 
+    color: black; 
  
         a{
             text-decoration:none;

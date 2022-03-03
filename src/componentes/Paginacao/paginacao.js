@@ -24,7 +24,7 @@ export const Paginacao = ({ contexto }) => {
     return (
         <Container >
             <SectionTitle>
-                <PageTitle>({titulo}) ({filtrados.length})</PageTitle>
+                <PageTitle>({titulo})({filtrados.length})</PageTitle>
                 <Busca contexto={contexto} />
                 <Pagination>
                     <button onClick={handlePagAnterior}>

@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const CardTitle = styled.h2`
-  font-size: 2rem;
+  padding-top: 10px;
+  font-size: 3em;
   color: #436147;
   text-align: center;
 `

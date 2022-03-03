@@ -12,7 +12,7 @@ html{
     font-family: Montserrat, sans-serif;
 }
 body{
-    padding-top: 90px;
+    padding: 60px 0;
     background-color: #efefef;
 }
 `
